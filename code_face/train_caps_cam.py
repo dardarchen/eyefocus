@@ -140,10 +140,10 @@ if __name__ == '__main__':
     pretrained_model.load_state_dict(torch.load('./pretrained/vgg16_bn.pth'))
     pretrained_dict = pretrained_model.state_dict()
     model1 = vgg16_bn(num_classes=num_class, init_weights=False)
-    model_dict = model1.state_dict()
-    pretrained_dict = {k: v for k,v in pretrained_dict.items() if k in model_dict}
-    model_dict.update(pretrained_dict)
-    model1.load_state_dict(model_dict)
+    #model_dict = model1.state_dict()
+    #pretrained_dict = {k: v for k,v in pretrained_dict.items() if k in model_dict}
+    #model_dict.update(pretrained_dict)
+    #model1.load_state_dict(model_dict)
     model1 = model1.cuda()
     
     model2 = MyCapsNet_cam(A=A, B=B, C=C, D=D, E=num_class, iters=em_iters).cuda()
