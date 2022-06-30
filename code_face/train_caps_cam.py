@@ -136,9 +136,9 @@ if __name__ == '__main__':
 
 
     #### train ####
-    pretrained_model = models.vgg16_bn(num_classes=1000)
-    pretrained_model.load_state_dict(torch.load('./pretrained/vgg16_bn.pth'))
-    pretrained_dict = pretrained_model.state_dict()
+    #pretrained_model = models.vgg16_bn(num_classes=1000)
+    #pretrained_model.load_state_dict(torch.load('./pretrained/vgg16_bn.pth'))
+    #pretrained_dict = pretrained_model.state_dict()
     model1 = vgg16_bn(num_classes=num_class, init_weights=False)
     #model_dict = model1.state_dict()
     #pretrained_dict = {k: v for k,v in pretrained_dict.items() if k in model_dict}
