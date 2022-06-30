@@ -35,8 +35,8 @@ def get_processed_datas(list_root):
 def upsample(data,label):
     ros = RandomOverSampler(random_state=0)
     data = list(np.array(data).reshape(-1,1))
-    X_resampled, y_resampled = ros.fit_sample(data, label)
-    X_resampled, y_resampled = list(X_resampled.reshape(-1)), list(y_resampled)
+    X_resampled, y_resampled = ros.fit_resample(data, label)
+    X_resampled, y_resampled = list(np.array(X_resampled).reshape(-1)), list(y_resampled)
     return X_resampled, list(y_resampled)
 
 
