@@ -37,6 +37,7 @@ def train():
         model1.train()
         model2.train()
         for ii, (img, label) in enumerate(dataloader):
+            print(str(epoch) + " - " + str(ii))
             img, label = V(img).cuda(), V(label).cuda()
             optimizer1.zero_grad()
             features1, prediction1 = model1(img)
